@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Food Shop</title>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<table border='1' >
+		<tr>
+			<th>Item</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			
+		</tr>
+		<tr th:each ="i:${basketlist}">
+			<td th:text="${i.key.getDescription()}" />
+			<td th:text="${i.key.getPrice()}" />
+			<td th:text="${i.value}"/>
+			
+		</tr>
+		
+	</table>
+	<span th:text="|Total Price: ${totalPrice}|"></span>
+</body>
+</html>

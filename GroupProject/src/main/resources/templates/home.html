@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Food Shop</title>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<link rel="stylesheet" href="registration.css" />
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left">
+			<h3>Food Shop</h3>
+		</div>
+		<div class="right">
+
+			<form class="box" action="addToBasket" method="post">
+				<div>
+				<h3>SELECT AN ITEM AND QUANTITY</h3>
+				</div>
+				<table style="width:100%">
+					<tr>
+						<th >Item</th>
+						<th >Quantity</th>
+					</tr>
+
+					<tr>
+
+						<td width="70%"><select  name="itemId" >
+								<option th:each="item : ${itemList}"
+									th:text="${item.description}+' - '+${item.price}+' GBP Stock: '+${item.stock}"
+									th:value=${item.itemId} />
+						</select></td>
+						<td width="30%"><input  type="number" name="quantity" >
+						</td>
+				</table>
+				
+				<div>
+					<input type=submit value="Add To Basket" name="button">
+				</div>
+				<div class="btn">
+					<a href="basket">View Basket</a>
+				</div>
+
+
+			</form>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
